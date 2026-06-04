@@ -1,5 +1,6 @@
 import { Header } from './components/Header/Header'
 import { Hero } from './components/Hero/Hero'
+import { Projects } from './components/Projects/Projects'
 import { Experience } from './components/Experience/Experience'
 import { Skills } from './components/Skills/Skills'
 import { Contact } from './components/Contact/Contact'
@@ -13,6 +14,7 @@ export default function App() {
       {/* Hero is full-bleed (full viewport width) */}
       <Hero />
       <main id="main" className={styles.container}>
+        <Projects />
         <Experience />
         <Skills />
       </main>

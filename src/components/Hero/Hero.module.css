@@ -79,9 +79,9 @@
   display: block;
   width: clamp(200px, 28vw, 320px);
   height: auto;
-  filter: grayscale(100%) contrast(1.1);
-  clip-path: inset(0px 0px 14px 0px);
-  transform: translateY(16px);
+  filter: grayscale(100%) contrast(1.2) brightness(0.9) sepia(0.1);
+  clip-path: inset(0px 0px 44px 0px);
+  transform: translateY(44px);
   margin-top: auto;
   align-self: end;
 }

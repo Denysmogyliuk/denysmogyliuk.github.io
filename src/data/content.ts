@@ -123,6 +123,95 @@ export const contacts: ContactLink[] = [
   { label: 'GitHub', value: 'DenysMogyliuk', href: 'https://github.com/DenysMogyliuk' },
 ]
 
+export type Project = {
+  name: string
+  url: string
+  description: string
+}
+
+export const projects: Project[] = [
+  {
+    name: 'Megasport',
+    url: 'https://megasport.ua',
+    description: 'Major Ukrainian sports retailer — e-commerce platform with extensive product catalog, filtering, and seamless checkout.',
+  },
+  {
+    name: 'Thrive Store',
+    url: 'https://thrivestore.co.uk',
+    description: 'UK-based e-commerce store with modern shopping experience, product showcases, and integrated payment solutions.',
+  },
+  {
+    name: 'Readiverses',
+    url: 'https://readiverses.com',
+    description: 'Digital reading platform focused on delivering engaging content experiences with clean, accessible UI.',
+  },
+  {
+    name: 'Echo Gold',
+    url: 'https://echo-gold.com',
+    description: 'Premium gold & jewelry e-commerce with elegant design, product showcases, and secure transactions.',
+  },
+  {
+    name: 'Sportive Stores',
+    url: 'https://sportivestores.com',
+    description: 'Multi-brand sports retail platform with dynamic catalog, advanced search, and responsive design.',
+  },
+  {
+    name: 'Aivanta',
+    url: 'https://aivanta.uk',
+    description: 'AI-powered technology company website with modern design and interactive product presentations.',
+  },
+  {
+    name: 'ArtGenix',
+    url: 'https://art-genix.com',
+    description: 'Creative AI-driven art platform with generative tools and interactive gallery experience.',
+  },
+  {
+    name: 'Inspire',
+    url: 'https://ai-inspire.com',
+    description: 'AI-powered inspiration platform helping users discover creative ideas and content.',
+  },
+  {
+    name: 'Learn IT Hub',
+    url: 'https://learnithub.uk',
+    description: 'UK-based educational technology platform for IT courses with interactive learning experience.',
+  },
+  {
+    name: 'Trek Supplies',
+    url: 'https://treksupplies.com',
+    description: 'Outdoor & adventure e-commerce store with product catalog, filtering, and smooth checkout flow.',
+  },
+  {
+    name: 'The Cardix',
+    url: 'https://thecardix.com',
+    description: 'Digital card platform with customizable templates and modern user-friendly interface.',
+  },
+  {
+    name: 'Softora',
+    url: 'https://softora.eu',
+    description: 'European software solutions company website with clean design and service presentations.',
+  },
+  {
+    name: 'Jubiva',
+    url: 'https://jubiva.com',
+    description: 'E-commerce platform with modern product showcases, dynamic catalog, and seamless UX.',
+  },
+  {
+    name: 'Boxelio',
+    url: 'https://boxelio.com',
+    description: 'Subscription box service platform with interactive product discovery and ordering system.',
+  },
+  {
+    name: 'Peak Gear',
+    url: 'https://peak-gear.com',
+    description: 'Sports & outdoor gear e-commerce with advanced filtering, product pages, and responsive design.',
+  },
+  {
+    name: 'OlaLingo',
+    url: 'https://www.olalingo.com/en',
+    description: 'Online language school with live classes from native teachers, flexible scheduling, and interactive e-learning platform.',
+  },
+]
+
 export const resumeUrl = '/Denys-Mogyliuk-CV.pdf'
 
 export const photo = {
