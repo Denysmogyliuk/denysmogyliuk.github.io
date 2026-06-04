@@ -5,6 +5,8 @@ export const profile = {
   name: 'Denys Mogyliuk',
   role: 'Front-end developer',
   url: 'https://denysmogyliuk.github.io',
+  greeting: 'Hi, my name is',
+  tagline: 'I’m a frontend developer in love with the Web — its performance, architecture, and real-time edges.',
   intro:
     'Built and shipped frontend for products with 10M+ daily active users. ' +
     'Architected React systems from scratch across ecommerce, AI tooling, and ' +

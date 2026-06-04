@@ -1,4 +1,24 @@
 /* ============================================================
+   Neue Machina — self-hosted (drop .woff2 files in /public/fonts/).
+   Free for personal use from pangrampangram.com. Falls back to the
+   system stack until the files are present.
+   ============================================================ */
+@font-face {
+  font-family: 'Neue Machina';
+  src: url('/fonts/NeueMachina-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Neue Machina';
+  src: url('/fonts/NeueMachina-Ultrabold.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ============================================================
    Global theme tokens (CSS variables).
    Light  = :root defaults.
    Dark   = :root[data-theme="dark"] (explicit).
@@ -24,8 +44,8 @@
   --radius: 12px;
   --radius-sm: 8px;
 
-  --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
-    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+  --font: 'Neue Machina', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
   --font-mono: ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace;
 }
 
@@ -112,7 +132,7 @@ h2,
 h3 {
   line-height: 1.15;
   letter-spacing: -0.02em;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 a {
