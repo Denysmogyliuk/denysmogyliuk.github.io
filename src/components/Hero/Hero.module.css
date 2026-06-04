@@ -6,21 +6,6 @@
   border-bottom: 1px solid var(--border);
 }
 
-/* ---- faint background scribble (transparent decoration) ---- */
-.scribbleBg {
-  position: absolute;
-  top: 12%;
-  right: clamp(-60px, -2vw, 0px);
-  width: clamp(280px, 42vw, 660px);
-  aspect-ratio: 1 / 1;
-  background-color: var(--text);
-  -webkit-mask: url('/scribbles.svg#1') no-repeat center / contain;
-  mask: url('/scribbles.svg#1') no-repeat center / contain;
-  opacity: 0.07;
-  pointer-events: none;
-  z-index: 0;
-}
-
 /* ---- head: badge + greeting + giant name ---- */
 .head {
   position: relative;

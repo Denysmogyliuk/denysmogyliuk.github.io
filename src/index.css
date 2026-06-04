@@ -127,6 +127,15 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   transition: background-color 0.2s ease, color 0.2s ease;
+  overflow-x: hidden; /* safety net against scribble side-bleed */
+}
+
+/* Stacking context spanning the whole document, so the page-wide
+   background scribbles (z-index:-1) stretch to full height and sit
+   behind every section. */
+#root {
+  position: relative;
+  isolation: isolate;
 }
 
 h1,

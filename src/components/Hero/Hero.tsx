@@ -5,8 +5,6 @@ import styles from './Hero.module.css'
 export function Hero() {
   return (
     <section className={styles.hero} aria-labelledby="hero-heading">
-      {/* faint background scribble */}
-      <span className={styles.scribbleBg} aria-hidden="true" />
 
       <div className={styles.head}>
         <p className={styles.greeting}>{profile.greeting}</p>

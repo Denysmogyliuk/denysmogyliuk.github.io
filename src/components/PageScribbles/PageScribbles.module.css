@@ -1,0 +1,76 @@
+/* Full-page background layer. Stretches to the whole document via inset:0
+   against the positioned #root (see index.css). */
+.layer {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden; /* clip the side-bleed so the page never scrolls sideways */
+  pointer-events: none;
+}
+
+.item {
+  position: absolute;
+  aspect-ratio: 1 / 1;
+  transform: rotate(var(--rot, 0deg));
+
+  /* Each scribble is a mask filled with the theme text color, so it adapts
+     to light/dark and stays faint. */
+  background-color: var(--text);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+
+  opacity: 0.06;
+}
+
+/* Anchor to an edge, letting part of the drawing bleed off the page. */
+.left {
+  left: clamp(-200px, -9vw, -70px);
+}
+.right {
+  right: clamp(-200px, -9vw, -70px);
+}
+
+/* Sprite fragments (SVG-stack: one drawing per #id). */
+.s1 {
+  -webkit-mask-image: url('/scribbles.svg#1');
+  mask-image: url('/scribbles.svg#1');
+}
+.s2 {
+  -webkit-mask-image: url('/scribbles.svg#2');
+  mask-image: url('/scribbles.svg#2');
+}
+.s3 {
+  -webkit-mask-image: url('/scribbles.svg#3');
+  mask-image: url('/scribbles.svg#3');
+}
+
+/* Per-item parallax drift while it's in view. Scroll-driven, so it runs on the
+   compositor and stays smooth. Guarded — unsupported browsers get a static
+   backdrop. */
+@supports (animation-timeline: view()) {
+  .item {
+    animation: drift linear both;
+    animation-timeline: view();
+    animation-range: entry -20% exit 120%;
+  }
+
+  @keyframes drift {
+    from {
+      transform: translateY(calc(-1 * var(--drift, 12%))) rotate(var(--rot, 0deg));
+    }
+    to {
+      transform: translateY(var(--drift, 12%)) rotate(var(--rot, 0deg));
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .item {
+    animation: none;
+    transform: rotate(var(--rot, 0deg));
+  }
+}
