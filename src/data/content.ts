@@ -8,7 +8,8 @@ export const profile = {
     'I build and ship frontend for products used by 10M+ people every day. Across ' +
     'ecommerce, AI tooling, and education platforms, I’ve architected React systems ' +
     'from scratch — modular enough that any developer can jump in without lengthy ' +
-    'onboarding. I move fast, but never at the cost of long-term code quality.',
+    'onboarding. Lately I\'ve been writing backend too: NestJS, PostgreSQL, S3 — ' +
+    'enough to own a feature end to end. I move fast, but never at the cost of long-term code quality.',
 } as const
 
 export type ExperienceProject = {
@@ -33,16 +34,15 @@ export const experience: Job[] = [
     projects: [
       {
         summary:
-          'Product company building and scaling e-commerce platforms, AI-powered content ' +
-          'generation systems, and online education products. Focused on frontend ' +
-          'architecture, scalable user experiences, performance optimization, and improving ' +
-          'product workflows.',
+          'Three product lines at once: e-commerce, an AI content generator, and an e-learning platform. ' +
+          'Mostly frontend architecture, but also picked up NestJS on the backend side.',
         highlights: [
-          'Architected frontend across 3 product lines (e-commerce, AI content generation, e-learning) — established clear module boundaries and maintainable architecture.',
-          'Reduced API overhead by ~40% and improved rendering performance by ~30% through TanStack Query caching and code splitting on high-load surfaces.',
-          'Shipped AI generation UI end-to-end: prompt workflows, generation history, content preview, and export pipeline.',
-          'Introduced Cursor AI into the development workflow, reducing delivery time by ~20% while maintaining code quality.',
-          'Participated in technical interviews, supported onboarding, and shared frontend best practices within the team.',
+          'Set up the frontend structure for all three products from scratch — clear boundaries, shared utilities, zero copy-paste between teams.',
+          'Cut API overhead by ~40% and sped up rendering by ~30% with TanStack Query and route-level code splitting.',
+          'Built the AI generation UI start to finish: prompt editor, generation history, preview, and export.',
+          'Brought Cursor AI into the team workflow — shaved ~20% off delivery time without touching code review standards.',
+          'Wrote NestJS services for the backend: REST endpoints, business logic, and data contracts shared with the frontend.',
+          'Did a few technical interviews and helped onboard new devs.',
         ],
       },
     ],
@@ -55,34 +55,30 @@ export const experience: Job[] = [
     projects: [
       {
         summary:
-          'Language-learning platform aimed at improving speaking and vocabulary skills. ' +
-          'Delivered core features while keeping the architecture adaptable to evolving ' +
-          'requirements.',
+          'Language app focused on speaking practice. The tricky part was real-time: live rooms, multi-user sessions, and keeping it all stable.',
         highlights: [
-          'Built a scalable Next.js 15 frontend with SSR and Server Components.',
-          'Delivered WebRTC speaking rooms for live pronunciation and conversation practice.',
-          'Implemented WebSocket-powered multi-user interactions for real-time learning sessions.',
-          'Built an i18n foundation and an RBAC admin dashboard for global usage and platform management.',
+          'Built the frontend on Next.js 15 with SSR and Server Components.',
+          'Shipped WebRTC speaking rooms — users practice pronunciation with live feedback.',
+          'Added WebSocket-based multi-user sessions for group learning.',
+          'Set up i18n and built an admin dashboard with role-based access.',
         ],
       },
       {
         summary:
-          'Equipment- and warehouse-management platform for an Olympic Games commission, ' +
-          'covering rental equipment logistics from storage through to invoicing.',
+          'Equipment management platform for an Olympic Games commission — tracking rental gear from warehouse to invoice.',
         highlights: [
-          'Built monitoring for rental equipment — storage location, condition, and additional services across multiple warehouse addresses.',
-          'Implemented the billing system for equipment rentals and add-on services.',
-          'Ran demos for the client and led functionality discussions to shape and refine the scope.',
+          'Built a dashboard to monitor equipment: where it is, what condition it\'s in, and which add-ons are attached.',
+          'Implemented the billing module for rentals and additional services.',
+          'Ran client demos and led feature discussions to keep the scope on track.',
         ],
       },
       {
         summary:
-          'Language-learning platform for travelers, blending lessons with trip planning ' +
-          'around real destinations.',
+          'Language-learning platform for travelers — lessons tied to real destinations and trip planning.',
         highlights: [
-          'Built location discovery and selection so learners could plan their studies by destination.',
-          'Implemented booking and lesson scheduling with teachers.',
-          'Added hotel selection and in-café food ordering as part of the travel experience.',
+          'Built location search and selection so learners could pick where they want to study.',
+          'Implemented teacher booking and lesson scheduling.',
+          'Added hotel search and café ordering as part of the travel flow.',
         ],
       },
     ],
@@ -95,15 +91,13 @@ export const experience: Job[] = [
     projects: [
       {
         summary:
-          'Large-scale sportswear e-commerce platform with 10M+ daily active users, focused ' +
-          'on product discovery, customer-facing flows, analytics, and production stability ' +
-          'under high traffic.',
+          'Sportswear e-commerce with 10M+ daily active users. Big catalog, high traffic, and a lot of moving parts on the frontend.',
         highlights: [
-          'Built SPA architecture from scratch, covering routing, reusable UI patterns, forms, and product data flows.',
-          'Integrated Google Analytics to improve funnel visibility and track conversion, feature usage, and drop-off points.',
-          'Used Hotjar insights to identify user friction across product browsing and checkout flows.',
-          'Set up Sentry error monitoring and frontend logging, helping the team detect, prioritize, and debug production issues faster.',
-          'Improved responsiveness and perceived performance in key e-commerce flows by ~30%.',
+          'Built the SPA from the ground up — routing, UI components, forms, product flows.',
+          'Wired up Google Analytics to track funnels, conversions, and where users drop off.',
+          'Used Hotjar to spot friction in browsing and checkout, then fixed what mattered.',
+          'Set up Sentry and frontend logging — made production debugging much less painful.',
+          'Tightened up key e-commerce flows and cut perceived load time by ~30%.',
         ],
       },
     ],
@@ -116,13 +110,12 @@ export const experience: Job[] = [
     projects: [
       {
         summary:
-          'Agency environment delivering multiple client projects, including a sports manager ' +
-          'simulator and data-heavy web applications.',
+          'Agency work — different clients, different domains. Shipped a sports manager simulator and a handful of data-heavy apps.',
         highlights: [
-          'Delivered multiple SPAs from zero to production, owning architecture, development, release, and iteration.',
-          'Designed a reusable frontend structure that other developers could extend without deep onboarding.',
-          'Improved complex data-driven UX flows for client products, reducing friction in business-critical interfaces.',
-          'Collaborated with designers to keep UX decisions consistent across products and reusable components.',
+          'Took projects from blank repo to production: architecture, dev, release, follow-up.',
+          'Built frontend structures other devs could pick up and extend without a long onboarding.',
+          'Reworked data-heavy UX flows where clients were losing users in critical steps.',
+          'Worked closely with designers to keep decisions consistent across products.',
         ],
       },
     ],
@@ -133,6 +126,7 @@ export type SkillGroup = { title: string; items: string[] }
 
 export const skills: SkillGroup[] = [
   { title: 'Frontend Architecture', items: ['React', 'Next.js', 'TypeScript', 'JavaScript (ES6+)'] },
+  { title: 'Backend', items: ['NestJS', 'PostgreSQL', 'AWS S3', 'REST API'] },
   { title: 'Styling & UI', items: ['Tailwind CSS', 'Bootstrap', 'Material UI'] },
   { title: 'State & Data Layer', items: ['TanStack Query', 'Zustand', 'Redux'] },
   { title: 'Performance & Scalability', items: ['SSR', 'Code Splitting', 'Rendering Optimization'] },
@@ -171,97 +165,97 @@ export const projects: Project[] = [
   {
     name: 'Megasport',
     url: 'https://megasport.ua',
-    description: 'Major Ukrainian sports retailer — e-commerce platform with extensive product catalog, filtering, and seamless checkout.',
+    description: 'Ukraine\'s biggest sports retailer. Built the catalog, filtering, and checkout flows — a lot of moving parts under high traffic.',
     image: '/projects/megasport.webp',
   },
   {
     name: 'Aivanta',
     url: 'https://aivanta.uk',
-    description: 'AI-powered technology company website with modern design and interactive product presentations.',
+    description: 'Tech company site with interactive product demos and a heavy focus on motion and visual polish.',
     image: '/projects/aivanta.webp',
   },
   {
     name: 'OlaLingo',
     url: 'https://www.olalingo.com/en',
-    description: 'Online language school with live classes from native teachers, flexible scheduling, and interactive e-learning platform.',
+    description: 'Online language school with live classes from native speakers. Built the scheduling flow and the e-learning platform.',
     image: '/projects/olalingo.webp',
   },
   {
     name: 'Peak Gear',
     url: 'https://peak-gear.com',
-    description: 'Sports & outdoor gear e-commerce with advanced filtering, product pages, and responsive design.',
+    description: 'Outdoor gear store. Clean catalog, solid filtering, and a checkout that doesn\'t get in the way.',
     image: '/projects/peak-gear.webp',
   },
   {
     name: 'ArtGenix',
     url: 'https://art-genix.com',
-    description: 'Creative AI-driven art platform with generative tools and interactive gallery experience.',
+    description: 'AI art platform — generative tools, image gallery, and a UI that had to match the creative vibe of the product.',
     image: '/projects/artgenix.webp',
   },
   {
     name: 'Thrive Store',
     url: 'https://thrivestore.co.uk',
-    description: 'UK-based e-commerce store with modern shopping experience, product showcases, and integrated payment solutions.',
+    description: 'UK health & wellness store. Product pages, cart, and payments — kept the UX clean and conversion-focused.',
     image: '/projects/thrive-store.webp',
   },
   {
     name: 'Learn IT Hub',
     url: 'https://learnithub.uk',
-    description: 'UK-based educational technology platform for IT courses with interactive learning experience.',
+    description: 'IT course platform from the UK. Course catalog, progress tracking, and an interface that doesn\'t feel like a textbook.',
     image: '/projects/learn-it-hub.webp',
   },
   {
     name: 'Boxelio',
     url: 'https://boxelio.com',
-    description: 'Subscription box service platform with interactive product discovery and ordering system.',
+    description: 'Subscription box service. The fun part was the product discovery flow — had to feel engaging, not just functional.',
     image: '/projects/boxelio.webp',
   },
   {
     name: 'Readiverses',
     url: 'https://readiverses.com',
-    description: 'Digital reading platform focused on delivering engaging content experiences with clean, accessible UI.',
+    description: 'Reading platform with a focus on keeping things readable and out of the way. Accessibility was a real priority here.',
     image: '/projects/readiverses.webp',
   },
   {
     name: 'Softora',
     url: 'https://softora.eu',
-    description: 'European software solutions company website with clean design and service presentations.',
+    description: 'Software company site for the EU market. Straightforward design, clear service pages, nothing unnecessary.',
     image: '/projects/softora.webp',
   },
   {
     name: 'Echo Gold',
     url: 'https://echo-gold.com',
-    description: 'Premium gold & jewelry e-commerce with elegant design, product showcases, and secure transactions.',
+    description: 'Gold & jewelry store where the design had to carry the premium feel. Product presentation was the main challenge.',
     image: '/projects/echo-gold.webp',
   },
   {
     name: 'Trek Supplies',
     url: 'https://treksupplies.com',
-    description: 'Outdoor & adventure e-commerce store with product catalog, filtering, and smooth checkout flow.',
+    description: 'Adventure gear store built for people who actually go outside. Fast filtering, no checkout friction.',
     image: '/projects/trek-supplies.webp',
   },
   {
     name: 'Inspire',
     url: 'https://ai-inspire.com',
-    description: 'AI-powered inspiration platform helping users discover creative ideas and content.',
+    description: 'AI inspiration tool — helps creatives get unstuck. Built around fast, low-friction idea discovery.',
     image: '/projects/inspire.webp',
   },
   {
     name: 'Jubiva',
     url: 'https://jubiva.com',
-    description: 'E-commerce platform with modern product showcases, dynamic catalog, and seamless UX.',
+    description: 'General e-commerce store. Dynamic catalog with a smooth browsing experience and a clean cart flow.',
     image: '/projects/jubiva.webp',
   },
   {
     name: 'The Cardix',
     url: 'https://thecardix.com',
-    description: 'Digital card platform with customizable templates and modern user-friendly interface.',
+    description: 'Digital card builder with customizable templates. The editor had to be simple enough for non-technical users.',
     image: '/projects/the-cardix.webp',
   },
   {
     name: 'Sportive Stores',
     url: 'https://sportivestores.com',
-    description: 'Multi-brand sports retail platform with dynamic catalog, advanced search, and responsive design.',
+    description: 'Multi-brand sports retail — lots of products, lots of filters, lots of edge cases. Kept the catalog fast and searchable.',
     image: '/projects/sportive-stores.webp',
   },
 ]
