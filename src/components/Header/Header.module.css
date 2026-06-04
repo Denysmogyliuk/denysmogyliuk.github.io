@@ -37,3 +37,26 @@
     display: none;
   }
 }
+
+/* ---- nav ---- */
+.nav {
+  display: flex;
+  gap: clamp(14px, 2vw, 28px);
+}
+
+.navLink {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+.navLink:hover {
+  color: var(--accent-strong);
+}
+
+@media (max-width: 720px) {
+  .nav {
+    display: none;
+  }
+}
