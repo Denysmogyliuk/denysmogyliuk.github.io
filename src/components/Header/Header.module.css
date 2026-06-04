@@ -22,15 +22,10 @@
 }
 
 .mark {
-  display: grid;
-  place-items: center;
-  width: 32px;
-  height: 32px;
+  display: block;
+  width: 34px;
+  height: 34px;
   border-radius: var(--radius-sm);
-  background: var(--accent);
-  color: var(--accent-contrast);
-  font-size: 14px;
-  font-weight: 800;
 }
 
 .name {

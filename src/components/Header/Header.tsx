@@ -6,7 +6,7 @@ export function Header() {
   return (
     <header className={styles.header} id="top">
       <a className={styles.wordmark} href="#top" aria-label={`${profile.name} — home`}>
-        <span className={styles.mark} aria-hidden="true">DM</span>
+        <img className={styles.mark} src="/logo.webp" alt="" width="36" height="36" />
         <span className={styles.name}>{profile.name}</span>
       </a>
       <ThemeToggle />
