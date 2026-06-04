@@ -15,6 +15,11 @@
   color: var(--accent-strong);
 }
 
+
+.linkText {
+  /* font problem */
+  transform: translateY(1px);
+}
 .emphasis {
   color: var(--accent-strong);
 }
@@ -45,7 +50,6 @@
   transition: transform 0.15s ease, opacity 0.15s ease;
 }
 .primary:hover {
-  transform: translateY(-1px);
   opacity: 0.92;
 }
 

@@ -40,7 +40,7 @@ export function Link({
       {...(download != null ? { download } : {})}
       {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
     >
-      {children}
+      <span className={styles.linkText}>{children}</span>
     </a>
   );
 }

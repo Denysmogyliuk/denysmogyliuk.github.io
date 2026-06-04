@@ -6,13 +6,12 @@ export const profile = {
   role: 'Front-end developer',
   url: 'https://denysmogyliuk.github.io',
   greeting: 'Hi, my name is',
-  tagline: 'I’m a frontend developer in love with the Web — its performance, architecture, and real-time edges.',
+  tagline: 'I’m a frontend developer in love with the Web, electronics, bicycles, and music.',
   intro:
-    'Built and shipped frontend for products with 10M+ daily active users. ' +
-    'Architected React systems from scratch across ecommerce, AI tooling, and ' +
-    'education platforms — modular enough that any developer can quickly contribute ' +
-    'without extensive onboarding. Strong focus on fast delivery while maintaining ' +
-    'long-term code quality and avoiding tech debt.',
+    'I build and ship frontend for products used by 10M+ people every day. Across ' +
+    'ecommerce, AI tooling, and education platforms, I’ve architected React systems ' +
+    'from scratch — modular enough that any developer can jump in without lengthy ' +
+    'onboarding. I move fast, but never at the cost of long-term code quality.',
 } as const
 
 export type Job = {
