@@ -1,0 +1,134 @@
+/* ============================================================
+   Global theme tokens (CSS variables).
+   Light  = :root defaults.
+   Dark   = :root[data-theme="dark"] (explicit).
+   Auto   = no data-theme attribute -> follows prefers-color-scheme.
+   ============================================================ */
+:root {
+  --accent: #5b5bd6;
+  --accent-strong: #4f46e5;
+  --accent-contrast: #ffffff;
+
+  --bg: #fbfbfd;
+  --bg-elevated: #ffffff;
+  --surface: #f3f3f8;
+  --text: #1a1a24;
+  --text-muted: #5b5b6b;
+  --border: #e6e6ef;
+  --tag-bg: #eeeefb;
+  --tag-text: #3a3a8a;
+
+  --shadow: 0 1px 2px rgba(20, 20, 40, 0.04), 0 8px 24px rgba(20, 20, 40, 0.06);
+
+  --maxw: 720px;
+  --radius: 12px;
+  --radius-sm: 8px;
+
+  --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+  --font-mono: ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+/* Shared dark palette (applied by both explicit dark and auto+OS-dark) */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --accent: #8b8bf5;
+    --accent-strong: #a5a5ff;
+    --accent-contrast: #14141f;
+
+    --bg: #0e0e16;
+    --bg-elevated: #16161f;
+    --surface: #1b1b27;
+    --text: #ededf5;
+    --text-muted: #a0a0b4;
+    --border: #2a2a3a;
+    --tag-bg: #232336;
+    --tag-text: #c2c2ff;
+
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.4);
+  }
+}
+
+:root[data-theme='dark'] {
+  --accent: #8b8bf5;
+  --accent-strong: #a5a5ff;
+  --accent-contrast: #14141f;
+
+  --bg: #0e0e16;
+  --bg-elevated: #16161f;
+  --surface: #1b1b27;
+  --text: #ededf5;
+  --text-muted: #a0a0b4;
+  --border: #2a2a3a;
+  --tag-bg: #232336;
+  --tag-text: #c2c2ff;
+
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* ============================================================
+   Reset / base
+   ============================================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  font-family: var(--font);
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+a {
+  color: var(--accent-strong);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}

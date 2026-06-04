@@ -1,0 +1,31 @@
+.toggle {
+  display: inline-flex;
+  padding: 3px;
+  gap: 2px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+}
+
+.btn {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 30px;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.btn:hover {
+  color: var(--text);
+}
+
+.btn[aria-checked='true'] {
+  background: var(--bg-elevated);
+  color: var(--accent-strong);
+  box-shadow: var(--shadow);
+}

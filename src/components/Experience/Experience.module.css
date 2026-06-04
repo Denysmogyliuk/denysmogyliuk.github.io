@@ -1,0 +1,72 @@
+.timeline {
+  display: grid;
+  gap: 16px;
+}
+
+.job {
+  position: relative;
+  padding: 24px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+.job:hover {
+  border-color: color-mix(in srgb, var(--accent) 50%, var(--border));
+  transform: translateY(-2px);
+}
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4px 16px;
+  margin-bottom: 12px;
+}
+
+.company {
+  font-size: 1.25rem;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  align-items: baseline;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+.position {
+  font-weight: 600;
+  color: var(--accent-strong);
+}
+.dates {
+  font-variant-numeric: tabular-nums;
+}
+
+.desc {
+  color: var(--text-muted);
+  font-size: 0.96rem;
+  margin-bottom: 14px;
+}
+
+.impact {
+  display: grid;
+  gap: 8px;
+}
+.impact li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 0.96rem;
+}
+.impact li::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 0.62em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}

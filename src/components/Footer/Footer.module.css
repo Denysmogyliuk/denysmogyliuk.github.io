@@ -1,0 +1,26 @@
+.footer {
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding: 36px 24px 56px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 24px;
+}
+.links {
+  display: flex;
+  gap: 18px;
+}
+.links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+.links a:hover {
+  color: var(--accent-strong);
+}
+.credit {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}

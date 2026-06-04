@@ -1,0 +1,22 @@
+.container {
+  width: 100%;
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+.skipLink {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  background: var(--accent);
+  color: var(--accent-contrast);
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+}
+.skipLink:focus {
+  left: 16px;
+  top: 16px;
+}
