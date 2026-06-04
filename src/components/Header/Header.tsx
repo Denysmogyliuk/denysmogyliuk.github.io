@@ -3,7 +3,7 @@ import { profile } from '../../data/content'
 import { ThemeToggle } from '../ThemeToggle/ThemeToggle'
 import styles from './Header.module.css'
 
-const NAV = [
+const navLinks = [
   { href: '#projects', label: 'Projects' },
   { href: '#experience', label: 'Experience' },
   { href: '#skills', label: 'Skills' },
@@ -11,12 +11,10 @@ const NAV = [
 ]
 
 export function Header() {
-  // Always scroll to top — a plain href="#top" does nothing on repeat clicks
-  // once the hash is already set.
-  function scrollToTop(e: MouseEvent<HTMLAnchorElement>) {
-    e.preventDefault()
-    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' })
+  function scrollToTop(event: MouseEvent<HTMLAnchorElement>) {
+    event.preventDefault()
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' })
     history.replaceState(null, '', window.location.pathname + window.location.search)
   }
 
@@ -33,9 +31,9 @@ export function Header() {
       </a>
 
       <nav className={styles.nav} aria-label="Primary">
-        {NAV.map((item) => (
-          <a key={item.href} className={styles.navLink} href={item.href}>
-            {item.label}
+        {navLinks.map((link) => (
+          <a key={link.href} className={styles.navLink} href={link.href}>
+            {link.label}
           </a>
         ))}
       </nav>

@@ -2,7 +2,6 @@
   text-decoration: none;
 }
 
-/* ---- view="text" ---- */
 .text {
   color: var(--text-muted);
   text-decoration: underline;
@@ -15,11 +14,10 @@
   color: var(--accent-strong);
 }
 
-
 .linkText {
-  /* font problem */
   transform: translateY(1px);
 }
+
 .emphasis {
   color: var(--accent-strong);
 }
@@ -27,7 +25,6 @@
   opacity: 0.8;
 }
 
-/* ---- shared button base ---- */
 .primary,
 .secondary {
   display: inline-flex;
@@ -42,7 +39,6 @@
   cursor: pointer;
 }
 
-/* ---- view="primary" ---- */
 .primary {
   background: #fff;
   color: var(--accent-strong);
@@ -53,7 +49,6 @@
   opacity: 0.92;
 }
 
-/* ---- view="secondary" ---- */
 .secondary {
   background: transparent;
   color: #fff;

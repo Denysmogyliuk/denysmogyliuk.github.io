@@ -10,18 +10,15 @@ import styles from './App.module.css'
 export default function App() {
   return (
     <>
-      {/* Page-wide background scribbles (sprite), behind all content */}
       <PageScribbles />
       <a className={styles.skipLink} href="#main">Skip to content</a>
       <Header />
-      {/* Hero is full-bleed (full viewport width) */}
       <Hero />
       <main id="main" className={styles.container}>
         <Projects />
         <Experience />
         <Skills />
       </main>
-      {/* Contact is full-bleed and doubles as the footer */}
       <Contact />
     </>
   )

@@ -5,7 +5,6 @@ import styles from './Hero.module.css'
 export function Hero() {
   return (
     <section className={styles.hero} aria-labelledby="hero-heading">
-
       <div className={styles.head}>
         <p className={styles.greeting}>{profile.greeting}</p>
         <h1 className={styles.name} id="hero-heading">
@@ -14,7 +13,6 @@ export function Hero() {
         </h1>
       </div>
 
-      {/* accent card (replaces the reference's portrait block) */}
       <div className={styles.card}>
         <div className={styles.cardArt}>
           <picture>

@@ -7,14 +7,11 @@ type LinkProps = {
   href: string;
   children: ReactNode;
   view?: LinkView;
-  /** Download attribute — true, or a suggested filename. */
   download?: string | boolean;
-  /** Accent-colored emphasis variant (only applies to view="text"). */
   emphasis?: boolean;
   className?: string;
 };
 
-/** Reusable link. Auto-handles external (http) targets. */
 export function Link({
   href,
   children,

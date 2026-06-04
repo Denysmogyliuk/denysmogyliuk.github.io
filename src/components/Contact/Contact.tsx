@@ -1,9 +1,27 @@
+import type { ReactNode } from 'react'
 import { contacts, credits, resumeUrl } from '../../data/content'
 import { Link } from '../Link/Link'
 import styles from './Contact.module.css'
 
-const email = contacts.find((c) => c.label === 'Email')
-const links = contacts.filter((c) => c.label !== 'Email')
+const email = contacts.find((contact) => contact.label === 'Email')
+const otherContacts = contacts.filter((contact) => contact.label !== 'Email')
+
+type ColumnAlignment = 'left' | 'center' | 'right'
+
+type ContactColumnProps = {
+  title: string
+  alignment: ColumnAlignment
+  children: ReactNode
+}
+
+function ContactColumn({ title, alignment, children }: ContactColumnProps) {
+  return (
+    <div className={`${styles.column} ${styles[alignment]}`}>
+      <h2 className={styles.columnTitle}>{title}</h2>
+      <ul className={styles.list}>{children}</ul>
+    </div>
+  )
+}
 
 export function Contact() {
   return (
@@ -13,47 +31,38 @@ export function Contact() {
       </p>
 
       <div className={styles.columns}>
-        <div className={`${styles.col} ${styles.left}`}>
-          <h2 className={styles.colTitle}>Links</h2>
-          <ul className={styles.list}>
-            <li>
-              <Link href={resumeUrl} download="Denys-Mogyliuk-CV.pdf" emphasis>
-                Résumé (PDF) ↓
-              </Link>
+        <ContactColumn title="Links" alignment="left">
+          <li>
+            <Link href={resumeUrl} download="Denys-Mogyliuk-CV.pdf" emphasis>
+              Résumé (PDF) ↓
+            </Link>
+          </li>
+          {otherContacts.map((contact) => (
+            <li key={contact.label}>
+              <Link href={contact.href}>{contact.label}</Link>
             </li>
-            {links.map((c) => (
-              <li key={c.label}>
-                <Link href={c.href}>{c.label}</Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+          ))}
+        </ContactColumn>
 
-        <div className={`${styles.col} ${styles.center}`}>
-          <h2 className={styles.colTitle}>Email</h2>
-          {email && (
-            <ul className={styles.list}>
-              <li>
-                <Link href={email.href}>{email.value}</Link>
-              </li>
-            </ul>
-          )}
-        </div>
+        {email && (
+          <ContactColumn title="Email" alignment="center">
+            <li>
+              <Link href={email.href}>{email.value}</Link>
+            </li>
+          </ContactColumn>
+        )}
 
-        <div className={`${styles.col} ${styles.right}`}>
-          <h2 className={styles.colTitle}>Credits</h2>
-          <ul className={styles.list}>
-            {credits.map((c) => (
-              <li key={c.text}>
-                {c.href ? (
-                  <Link href={c.href}>{c.text}</Link>
-                ) : (
-                  <span className={styles.muted}>{c.text}</span>
-                )}
-              </li>
-            ))}
-          </ul>
-        </div>
+        <ContactColumn title="Credits" alignment="right">
+          {credits.map((credit) => (
+            <li key={credit.text}>
+              {credit.href ? (
+                <Link href={credit.href}>{credit.text}</Link>
+              ) : (
+                <span className={styles.muted}>{credit.text}</span>
+              )}
+            </li>
+          ))}
+        </ContactColumn>
       </div>
     </section>
   )

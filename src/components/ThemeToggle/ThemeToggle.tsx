@@ -2,7 +2,7 @@ import type { ReactElement } from 'react'
 import { useTheme, type Theme } from '../../hooks/useTheme'
 import styles from './ThemeToggle.module.css'
 
-const OPTIONS: { value: Theme; label: string; icon: ReactElement }[] = [
+const themeOptions: { value: Theme; label: string; icon: ReactElement }[] = [
   {
     value: 'light',
     label: 'Light',
@@ -39,18 +39,18 @@ export function ThemeToggle() {
 
   return (
     <div className={styles.toggle} role="radiogroup" aria-label="Color theme">
-      {OPTIONS.map((opt) => (
+      {themeOptions.map((option) => (
         <button
-          key={opt.value}
+          key={option.value}
           type="button"
           role="radio"
-          aria-checked={theme === opt.value}
-          aria-label={opt.label}
-          title={`${opt.label} theme`}
-          className={styles.btn}
-          onClick={() => setTheme(opt.value)}
+          aria-checked={theme === option.value}
+          aria-label={option.label}
+          title={`${option.label} theme`}
+          className={styles.button}
+          onClick={() => setTheme(option.value)}
         >
-          {opt.icon}
+          {option.icon}
         </button>
       ))}
     </div>

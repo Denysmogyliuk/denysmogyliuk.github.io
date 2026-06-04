@@ -7,7 +7,7 @@
   border-radius: 999px;
 }
 
-.btn {
+.button {
   display: grid;
   place-items: center;
   width: 34px;
@@ -20,11 +20,11 @@
   transition: color 0.15s ease, background-color 0.15s ease;
 }
 
-.btn:hover {
+.button:hover {
   color: var(--text);
 }
 
-.btn[aria-checked='true'] {
+.button[aria-checked='true'] {
   background: var(--bg-elevated);
   color: var(--accent-strong);
   box-shadow: var(--shadow);

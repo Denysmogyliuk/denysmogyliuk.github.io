@@ -1,9 +1,3 @@
-/* ============================================================
-   Self-hosted fonts.
-   - Neue Machina  -> display + body (main font)
-   - JetBrains Mono -> technical labels (eyebrows, dates, tags, links)
-   Both fall back to system stacks until the .woff2 files are present.
-   ============================================================ */
 @font-face {
   font-family: 'Neue Machina';
   src: url('/fonts/neue-machina.woff2') format('woff2');
@@ -19,12 +13,6 @@
   font-display: swap;
 }
 
-/* ============================================================
-   Global theme tokens (CSS variables).
-   Light  = :root defaults.
-   Dark   = :root[data-theme="dark"] (explicit).
-   Auto   = no data-theme attribute -> follows prefers-color-scheme.
-   ============================================================ */
 :root {
   --accent: #5b5bd6;
   --accent-strong: #4f46e5;
@@ -51,7 +39,6 @@
     Consolas, monospace;
 }
 
-/* Shared dark palette (applied by both explicit dark and auto+OS-dark) */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme]) {
     --accent: #8b8bf5;
@@ -88,9 +75,6 @@
   --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
-/* ============================================================
-   Reset / base
-   ============================================================ */
 *,
 *::before,
 *::after {
@@ -127,12 +111,9 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   transition: background-color 0.2s ease, color 0.2s ease;
-  overflow-x: hidden; /* safety net against scribble side-bleed */
+  overflow-x: hidden;
 }
 
-/* Stacking context spanning the whole document, so the page-wide
-   background scribbles (z-index:-1) stretch to full height and sit
-   behind every section. */
 #root {
   position: relative;
   isolation: isolate;

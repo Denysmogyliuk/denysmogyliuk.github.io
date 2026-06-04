@@ -6,7 +6,6 @@
   border-bottom: 1px solid var(--border);
 }
 
-/* ---- head: badge + greeting + giant name ---- */
 .head {
   position: relative;
   z-index: 1;
@@ -30,7 +29,6 @@
   display: block;
 }
 
-/* ---- accent card ---- */
 .card {
   --pad: clamp(24px, 3vw, 44px);
   position: relative;

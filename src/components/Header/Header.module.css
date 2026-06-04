@@ -38,7 +38,6 @@
   }
 }
 
-/* ---- nav ---- */
 .nav {
   display: flex;
   gap: clamp(14px, 2vw, 28px);

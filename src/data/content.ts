@@ -1,6 +1,3 @@
-// Single source of truth for all portfolio content (from CV).
-// Keep components dumb; edit content here.
-
 export const profile = {
   name: 'Denys Mogyliuk',
   role: 'Front-end engineer',
@@ -245,5 +242,4 @@ export const credits: Credit[] = [
   { text: `© ${new Date().getFullYear()}, Denys Mogyliuk` },
 ]
 
-// Flat skill list for JSON-LD knowsAbout
-export const allSkills = skills.flatMap((g) => g.items)
+export const allSkills = skills.flatMap((group) => group.items)

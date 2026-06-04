@@ -1,0 +1,81 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.card:hover {
+  border-color: color-mix(in srgb, var(--accent) 50%, var(--border));
+  transform: translateY(-2px);
+}
+
+.preview {
+  display: block;
+  aspect-ratio: 600 / 380;
+  overflow: hidden;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.previewImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .previewImage {
+  transform: scale(1.03);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  flex: 1;
+}
+
+.heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4px 12px;
+}
+
+.name {
+  font-size: 1.1rem;
+}
+
+.domain {
+  font-size: 0.82rem !important;
+  font-family: var(--font-mono);
+  color: var(--text-muted) !important;
+}
+
+.description {
+  flex: 1;
+  font-size: 0.93rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+.visitLink {
+  font-size: 0.88rem !important;
+  color: var(--accent-strong) !important;
+  text-decoration: none !important;
+  font-weight: 500;
+  transition: opacity 0.15s ease;
+}
+
+.visitLink:hover {
+  opacity: 0.75;
+  color: var(--accent-strong) !important;
+}
