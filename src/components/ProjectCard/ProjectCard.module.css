@@ -79,3 +79,27 @@
   opacity: 0.75;
   color: var(--accent-strong) !important;
 }
+
+.arrow {
+  display: inline-block;
+}
+
+.card:hover .arrow {
+  animation: arrowJump 0.7s ease-in-out infinite;
+}
+
+@keyframes arrowJump {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(6px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card:hover .arrow {
+    animation: none;
+  }
+}

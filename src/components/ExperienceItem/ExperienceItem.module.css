@@ -45,7 +45,13 @@
   font-variant-numeric: tabular-nums;
 }
 
-.description {
+.project + .project {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px dashed var(--border);
+}
+
+.summary {
   color: var(--text-muted);
   font-size: 0.96rem;
   margin-bottom: 14px;

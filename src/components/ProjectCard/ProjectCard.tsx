@@ -40,7 +40,10 @@ export function ProjectCard({ project }: ProjectCardProps) {
         </div>
         <p className={styles.description}>{project.description}</p>
         <Link className={styles.visitLink} href={project.url}>
-          Visit Website →
+          Visit Website{' '}
+          <span className={styles.arrow} aria-hidden="true">
+            →
+          </span>
         </Link>
       </div>
     </li>

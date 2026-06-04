@@ -17,12 +17,17 @@ export function ExperienceItem({ job }: ExperienceItemProps) {
           </span>
         </p>
       </div>
-      <p className={styles.description}>{job.description}</p>
-      <ul className={styles.achievements}>
-        {job.impact.map((achievement) => (
-          <li key={achievement}>{achievement}</li>
-        ))}
-      </ul>
+
+      {job.projects.map((project) => (
+        <div className={styles.project} key={project.summary}>
+          <p className={styles.summary}>{project.summary}</p>
+          <ul className={styles.achievements}>
+            {project.highlights.map((highlight) => (
+              <li key={highlight}>{highlight}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
     </li>
   )
 }
