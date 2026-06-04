@@ -11,8 +11,9 @@ export default function App() {
     <>
       <a className={styles.skipLink} href="#main">Skip to content</a>
       <Header />
+      {/* Hero is full-bleed (full viewport width) */}
+      <Hero />
       <main id="main" className={styles.container}>
-        <Hero />
         <Experience />
         <Skills />
         <Contact />

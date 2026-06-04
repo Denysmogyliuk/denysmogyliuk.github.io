@@ -1,21 +1,32 @@
 .hero {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  align-items: center;
-  gap: 48px;
-  padding: 80px 0 64px;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: clamp(36px, 6vw, 80px) clamp(20px, 5vw, 80px) clamp(40px, 5vw, 72px);
   border-bottom: 1px solid var(--border);
 }
 
-@media (max-width: 720px) {
-  .hero {
-    grid-template-columns: 1fr;
-    gap: 32px;
-    padding: 56px 0 48px;
-  }
+/* ---- faint background scribble (transparent decoration) ---- */
+.scribbleBg {
+  position: absolute;
+  top: -4%;
+  right: clamp(-60px, -2vw, 0px);
+  width: clamp(280px, 42vw, 660px);
+  aspect-ratio: 1 / 1;
+  background-color: var(--text);
+  -webkit-mask: url('/scribbles.svg#1') no-repeat center / contain;
+  mask: url('/scribbles.svg#1') no-repeat center / contain;
+  opacity: 0.07;
+  pointer-events: none;
+  z-index: 0;
 }
 
-/* ---- Text column ---- */
+/* ---- head: badge + greeting + giant name ---- */
+.head {
+  position: relative;
+  z-index: 1;
+}
+
 .badge {
   display: inline-flex;
   align-items: center;
@@ -24,7 +35,6 @@
   padding: 6px 12px;
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  font-weight: 400;
   color: var(--text-muted);
   background: var(--surface);
   border: 1px solid var(--border);
@@ -46,68 +56,62 @@
 
 .greeting {
   font-family: var(--font-mono);
-  font-size: 0.95rem;
+  font-size: clamp(0.85rem, 1.4vw, 1.05rem);
   color: var(--text-muted);
-  margin-bottom: 10px;
+  margin-bottom: 6px;
 }
 
 .name {
-  font-size: clamp(2.5rem, 7vw, 3.75rem);
-  line-height: 1.02;
-  margin-bottom: 20px;
-  background: linear-gradient(120deg, var(--text), var(--accent-strong));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.tagline {
-  font-size: 1.25rem;
-  line-height: 1.4;
+  font-size: clamp(3rem, 13vw, 9.5rem);
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
   color: var(--text);
-  max-width: 32ch;
-  margin-bottom: 18px;
+}
+.name span {
+  display: block;
 }
 
-.intro {
-  font-size: 1rem;
-  color: var(--text-muted);
-  max-width: 52ch;
-  margin-bottom: 28px;
+/* ---- accent card ---- */
+.card {
+  position: relative;
+  z-index: 1;
+  margin-top: clamp(32px, 4vw, 56px);
+  display: grid;
+  grid-template-columns: 0.7fr 1.3fr;
+  gap: clamp(20px, 3vw, 48px);
+  align-items: center;
+  padding: clamp(24px, 3vw, 44px);
+  border-radius: 28px;
+  background: linear-gradient(140deg, var(--accent), var(--accent-strong));
+  box-shadow: var(--shadow);
+  overflow: hidden;
 }
 
-.cta {
-  display: inline-block;
-  background: var(--accent);
-  color: var(--accent-contrast);
-  text-decoration: none;
-  font-weight: 400;
-  padding: 12px 22px;
-  border-radius: 999px;
-  transition: transform 0.15s ease, background-color 0.15s ease;
-}
-.cta:hover {
-  background: var(--accent-strong);
-  transform: translateY(-1px);
+@media (max-width: 720px) {
+  .card {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
 }
 
-/* ---- Designer element: scribble ---- */
-.figure {
+.cardArt {
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 160px;
 }
 
-.scribble {
+.scribbleArt {
   display: block;
   width: 100%;
-  max-width: 280px;
+  max-width: 220px;
   aspect-ratio: 1 / 1;
-  background-color: var(--accent);
+  background-color: #fff;
   -webkit-mask: url('/scribbles.svg#2') no-repeat center / contain;
   mask: url('/scribbles.svg#2') no-repeat center / contain;
+  opacity: 0.92;
   animation: float 7s ease-in-out infinite alternate;
-  transform-origin: center;
 }
 
 @keyframes float {
@@ -115,17 +119,42 @@
   to { transform: translateY(6px) rotate(2deg); }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .scribble {
-    animation: none;
-  }
-  .dot {
-    animation: none;
-  }
+.cardBody {
+  color: #fff;
 }
 
-@media (max-width: 720px) {
-  .scribble {
-    max-width: 200px;
+.tagline {
+  font-size: clamp(1.25rem, 2.6vw, 1.9rem);
+  line-height: 1.25;
+  margin-bottom: 16px;
+}
+
+.intro {
+  font-size: clamp(0.92rem, 1.3vw, 1rem);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 60ch;
+  margin-bottom: 24px;
+}
+
+.cta {
+  display: inline-block;
+  background: #fff;
+  color: var(--accent-strong);
+  text-decoration: none;
+  font-weight: 400;
+  padding: 12px 24px;
+  border-radius: 999px;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+.cta:hover {
+  transform: translateY(-1px);
+  opacity: 0.92;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dot,
+  .scribbleArt {
+    animation: none;
   }
 }
