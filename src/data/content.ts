@@ -123,6 +123,8 @@ export const contacts: ContactLink[] = [
   { label: 'GitHub', value: 'DenysMogyliuk', href: 'https://github.com/DenysMogyliuk' },
 ]
 
+export const resumeUrl = '/Denys-Mogyliuk-CV.pdf'
+
 export type Credit = { text: string; href?: string }
 
 export const credits: Credit[] = [

@@ -1,4 +1,4 @@
-import { contacts, credits } from '../../data/content'
+import { contacts, credits, resumeUrl } from '../../data/content'
 import styles from './Contact.module.css'
 
 const email = contacts.find((c) => c.label === 'Email')
@@ -15,6 +15,15 @@ export function Contact() {
         <div className={`${styles.col} ${styles.left}`}>
           <h2 className={styles.colTitle}>Links</h2>
           <ul className={styles.list}>
+            <li>
+              <a
+                className={`${styles.link} ${styles.resume}`}
+                href={resumeUrl}
+                download="Denys-Mogyliuk-CV.pdf"
+              >
+                Résumé (PDF) ↓
+              </a>
+            </li>
             {links.map((c) => (
               <li key={c.label}>
                 <a className={styles.link} href={c.href} target="_blank" rel="noopener noreferrer">

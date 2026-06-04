@@ -76,3 +76,11 @@
   color: var(--text-muted);
   font-size: 1.05rem;
 }
+
+.resume {
+  color: var(--accent-strong);
+  font-weight: 400;
+}
+.resume:hover {
+  opacity: 0.8;
+}
