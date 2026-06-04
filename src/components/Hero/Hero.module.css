@@ -111,19 +111,11 @@
   margin-bottom: 24px;
 }
 
-.cta {
-  display: inline-block;
-  background: #fff;
-  color: var(--accent-strong);
-  text-decoration: none;
-  font-weight: 400;
-  padding: 12px 24px;
-  border-radius: 999px;
-  transition: transform 0.15s ease, opacity 0.15s ease;
-}
-.cta:hover {
-  transform: translateY(-1px);
-  opacity: 0.92;
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -1,4 +1,5 @@
 import { contacts, credits, resumeUrl } from '../../data/content'
+import { Link } from '../Link/Link'
 import styles from './Contact.module.css'
 
 const email = contacts.find((c) => c.label === 'Email')
@@ -16,19 +17,13 @@ export function Contact() {
           <h2 className={styles.colTitle}>Links</h2>
           <ul className={styles.list}>
             <li>
-              <a
-                className={`${styles.link} ${styles.resume}`}
-                href={resumeUrl}
-                download="Denys-Mogyliuk-CV.pdf"
-              >
+              <Link href={resumeUrl} download="Denys-Mogyliuk-CV.pdf" emphasis>
                 Résumé (PDF) ↓
-              </a>
+              </Link>
             </li>
             {links.map((c) => (
               <li key={c.label}>
-                <a className={styles.link} href={c.href} target="_blank" rel="noopener noreferrer">
-                  {c.label}
-                </a>
+                <Link href={c.href}>{c.label}</Link>
               </li>
             ))}
           </ul>
@@ -39,7 +34,7 @@ export function Contact() {
           {email && (
             <ul className={styles.list}>
               <li>
-                <a className={styles.link} href={email.href}>{email.value}</a>
+                <Link href={email.href}>{email.value}</Link>
               </li>
             </ul>
           )}
@@ -51,9 +46,7 @@ export function Contact() {
             {credits.map((c) => (
               <li key={c.text}>
                 {c.href ? (
-                  <a className={styles.link} href={c.href} target="_blank" rel="noopener noreferrer">
-                    {c.text}
-                  </a>
+                  <Link href={c.href}>{c.text}</Link>
                 ) : (
                   <span className={styles.muted}>{c.text}</span>
                 )}

@@ -1,4 +1,5 @@
-import { profile, photo } from '../../data/content'
+import { profile, photo, resumeUrl } from '../../data/content'
+import { Link } from '../Link/Link'
 import styles from './Hero.module.css'
 
 export function Hero() {
@@ -34,7 +35,12 @@ export function Hero() {
         <div className={styles.cardBody}>
           <p className={styles.tagline}>{profile.tagline}</p>
           <p className={styles.intro}>{profile.intro}</p>
-          <a className={styles.cta} href="#contact">Get in touch</a>
+          <div className={styles.actions}>
+            <Link view="primary" href="#contact">Get in touch</Link>
+            <Link view="secondary" href={resumeUrl} download="Denys-Mogyliuk-CV.pdf">
+              Download CV ↓
+            </Link>
+          </div>
         </div>
       </div>
     </section>
