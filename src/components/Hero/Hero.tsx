@@ -1,4 +1,4 @@
-import { profile } from '../../data/content'
+import { profile, photo } from '../../data/content'
 import styles from './Hero.module.css'
 
 export function Hero() {
@@ -17,8 +17,19 @@ export function Hero() {
 
       {/* accent card (replaces the reference's portrait block) */}
       <div className={styles.card}>
-        <div className={styles.cardArt} aria-hidden="true">
-          <span className={styles.scribbleArt} />
+        <div className={styles.cardArt}>
+          <picture>
+            <source type="image/webp" srcSet={photo.webp} />
+            <img
+              className={styles.photo}
+              src={photo.webp}
+              alt={photo.alt}
+              width={photo.width}
+              height={photo.height}
+              decoding="async"
+              loading="eager"
+            />
+          </picture>
         </div>
         <div className={styles.cardBody}>
           <p className={styles.tagline}>{profile.tagline}</p>

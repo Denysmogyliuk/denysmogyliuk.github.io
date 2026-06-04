@@ -27,7 +27,7 @@ export type Job = {
 export const experience: Job[] = [
   {
     company: 'Niko Technologies',
-    position: 'Front-end developer',
+    position: '',
     start: 'Nov 2025',
     end: 'Present',
     description:
@@ -45,7 +45,7 @@ export const experience: Job[] = [
   },
   {
     company: 'Corpsoft',
-    position: 'Front-end developer',
+    position: '',
     start: 'Apr 2024',
     end: 'Nov 2025',
     description:
@@ -61,7 +61,7 @@ export const experience: Job[] = [
   },
   {
     company: 'Memcrab',
-    position: 'Front-end developer',
+    position: '',
     start: 'Feb 2022',
     end: 'Apr 2024',
     description:
@@ -78,7 +78,7 @@ export const experience: Job[] = [
   },
   {
     company: 'Progressio agency',
-    position: 'Front-end developer',
+    position: '',
     start: 'Jul 2019',
     end: 'Feb 2022',
     description:
@@ -125,12 +125,19 @@ export const contacts: ContactLink[] = [
 
 export const resumeUrl = '/Denys-Mogyliuk-CV.pdf'
 
+export const photo = {
+  webp: '/denys.webp',
+  alt: 'Denys Mogyliuk',
+  width: 700,
+  height: 700,
+}
+
 export type Credit = { text: string; href?: string }
 
 export const credits: Credit[] = [
-  { text: 'Built with React & Vite' },
+  { text: 'Handcrafted by me' },
   { text: 'Source on GitHub', href: 'https://github.com/DenysMogyliuk' },
-  { text: `© ${new Date().getFullYear()} Denys Mogyliuk` },
+  { text: `© ${new Date().getFullYear()}, Denys Mogyliuk` },
 ]
 
 // Flat skill list for JSON-LD knowsAbout

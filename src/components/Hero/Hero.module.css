@@ -47,14 +47,16 @@
 
 /* ---- accent card ---- */
 .card {
+  --pad: clamp(24px, 3vw, 44px);
   position: relative;
   z-index: 1;
   margin-top: clamp(32px, 4vw, 56px);
   display: grid;
-  grid-template-columns: 0.7fr 1.3fr;
+  grid-template-columns: auto 1fr;
   gap: clamp(20px, 3vw, 48px);
-  align-items: center;
-  padding: clamp(24px, 3vw, 44px);
+  align-items: end;
+  padding: var(--pad);
+  padding-bottom: 0;
   border-radius: 28px;
   background: hsl(263 52% 64%);
   box-shadow: var(--shadow);
@@ -64,36 +66,35 @@
 @media (max-width: 720px) {
   .card {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 0;
+    justify-items: center;
   }
 }
 
 .cardArt {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 160px;
+  align-self: end;
 }
 
-.scribbleArt {
+.photo {
   display: block;
-  width: 100%;
-  max-width: 220px;
-  aspect-ratio: 1 / 1;
-  background-color: #fff;
-  -webkit-mask: url('/scribbles.svg#2') no-repeat center / contain;
-  mask: url('/scribbles.svg#2') no-repeat center / contain;
-  opacity: 0.92;
-  animation: float 7s ease-in-out infinite alternate;
-}
-
-@keyframes float {
-  from { transform: translateY(-6px) rotate(-2deg); }
-  to { transform: translateY(6px) rotate(2deg); }
+  width: clamp(200px, 28vw, 320px);
+  height: auto;
+  filter: grayscale(100%) contrast(1.1);
+  clip-path: inset(0px 0px 14px 0px);
+  transform: translateY(16px);
+  margin-top: auto;
+  align-self: end;
 }
 
 .cardBody {
   color: #fff;
+  padding-bottom: var(--pad);
+}
+
+@media (max-width: 720px) {
+  .cardBody {
+    padding-top: var(--pad);
+  }
 }
 
 .tagline {
@@ -126,7 +127,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .scribbleArt {
-    animation: none;
+  .photo {
+    transition: none;
   }
 }
