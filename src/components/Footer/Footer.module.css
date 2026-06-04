@@ -21,6 +21,7 @@
   color: var(--accent-strong);
 }
 .credit {
+  font-family: var(--font-mono);
   color: var(--text-muted);
-  font-size: 0.85rem;
+  font-size: 0.78rem;
 }

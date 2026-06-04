@@ -1,21 +1,15 @@
-# Fonts
+# Fonts (self-hosted)
 
-Drop the self-hosted **Neue Machina** web fonts here as `.woff2`:
+| File | Family | Weight | Used for |
+|------|--------|--------|----------|
+| `neue-machina.woff2` | Neue Machina (PP Neue Machina Plain) | 400 | display + body (main font) |
+| `jetbrains-mono.woff2` | JetBrains Mono | 400 | technical labels (greeting, dates, tags, contact labels, footer) |
 
-- `NeueMachina-Regular.woff2` (weight 400 — body text)
-- `NeueMachina-Ultrabold.woff2` (weight 800 — headings, name, monogram)
+`@font-face` declarations live in `src/index.css`; both files are preloaded in `index.html`.
 
-## Where to get them
-
-PP Neue Machina is **free for personal use** from
+Neue Machina is free for personal use from
 [pangrampangram.com/products/neue-machina](https://pangrampangram.com/products/neue-machina).
+JetBrains Mono is open source (Apache-2.0).
 
-1. Download the family, then take the **Regular** and **Ultrabold** weights.
-2. If you only have `.otf`/`.ttf`, convert to `.woff2` (e.g. the
-   [google/woff2](https://github.com/google/woff2) tool, or any "ttf to woff2"
-   converter), then rename to the two filenames above.
-
-Until these files are present, the site falls back to the system font stack —
-everything still works, it just won't render in Neue Machina.
-
-The `@font-face` declarations live in `src/index.css`; they're preloaded in `index.html`.
+To swap a font, replace the `.woff2` (keep the filename) or update the `@font-face`
+`src` + filename in `src/index.css` and the preload in `index.html`.

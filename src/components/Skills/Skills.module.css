@@ -5,9 +5,10 @@
 }
 
 .groupTitle {
-  font-size: 0.8rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
   color: var(--text-muted);
   margin-bottom: 12px;
 }
@@ -20,8 +21,9 @@
 .tag {
   background: var(--tag-bg);
   color: var(--tag-text);
-  font-size: 0.85rem;
-  font-weight: 500;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 400;
   padding: 5px 12px;
   border-radius: 999px;
 }

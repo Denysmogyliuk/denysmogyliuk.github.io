@@ -42,6 +42,8 @@
   color: var(--accent-strong);
 }
 .dates {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
   font-variant-numeric: tabular-nums;
 }
 
