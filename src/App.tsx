@@ -3,7 +3,6 @@ import { Hero } from './components/Hero/Hero'
 import { Experience } from './components/Experience/Experience'
 import { Skills } from './components/Skills/Skills'
 import { Contact } from './components/Contact/Contact'
-import { Footer } from './components/Footer/Footer'
 import styles from './App.module.css'
 
 export default function App() {
@@ -16,9 +15,9 @@ export default function App() {
       <main id="main" className={styles.container}>
         <Experience />
         <Skills />
-        <Contact />
       </main>
-      <Footer />
+      {/* Contact is full-bleed and doubles as the footer */}
+      <Contact />
     </>
   )
 }

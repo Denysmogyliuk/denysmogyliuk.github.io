@@ -123,5 +123,13 @@ export const contacts: ContactLink[] = [
   { label: 'GitHub', value: 'DenysMogyliuk', href: 'https://github.com/DenysMogyliuk' },
 ]
 
+export type Credit = { text: string; href?: string }
+
+export const credits: Credit[] = [
+  { text: 'Built with React & Vite' },
+  { text: 'Source on GitHub', href: 'https://github.com/DenysMogyliuk' },
+  { text: `© ${new Date().getFullYear()} Denys Mogyliuk` },
+]
+
 // Flat skill list for JSON-LD knowsAbout
 export const allSkills = skills.flatMap((g) => g.items)

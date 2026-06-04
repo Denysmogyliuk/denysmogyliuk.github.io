@@ -8,10 +8,6 @@ export function Hero() {
       <span className={styles.scribbleBg} aria-hidden="true" />
 
       <div className={styles.head}>
-        <span className={styles.badge}>
-          <span className={styles.dot} />
-          Available for work
-        </span>
         <p className={styles.greeting}>{profile.greeting}</p>
         <h1 className={styles.name} id="hero-heading">
           <span>Denys</span>
