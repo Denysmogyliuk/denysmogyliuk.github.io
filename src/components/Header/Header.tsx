@@ -1,6 +1,6 @@
-import { useState, type MouseEvent } from 'react'
 import { profile } from '../../data/content'
 import { ThemeToggle } from '../ThemeToggle/ThemeToggle'
+import { useHeader } from '../../hooks/useHeader'
 import styles from './Header.module.css'
 
 const navLinks = [
@@ -11,18 +11,10 @@ const navLinks = [
 ]
 
 export function Header() {
-  const [menuOpen, setMenuOpen] = useState(false)
-
-  function scrollToTop(event: MouseEvent<HTMLAnchorElement>) {
-    event.preventDefault()
-    setMenuOpen(false)
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' })
-    history.replaceState(null, '', window.location.pathname + window.location.search)
-  }
+  const { menuOpen, setMenuOpen, headerRef, scrollToTop } = useHeader()
 
   return (
-    <header className={styles.header} id="top">
+    <header ref={headerRef} className={styles.header} id="top">
       <a
         className={styles.wordmark}
         href="#top"
