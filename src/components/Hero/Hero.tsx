@@ -1,6 +1,6 @@
-import { profile, photo, resumeUrl } from '../../data/content'
-import { Link } from '../Link/Link'
-import styles from './Hero.module.css'
+import { profile, photo, resumeUrl } from "../../data/content";
+import { Link } from "../Link/Link";
+import styles from "./Hero.module.css";
 
 export function Hero() {
   return (
@@ -32,13 +32,19 @@ export function Hero() {
           <p className={styles.tagline}>{profile.tagline}</p>
           <p className={styles.intro}>{profile.intro}</p>
           <div className={styles.actions}>
-            <Link view="primary" href="#contact">Get in touch</Link>
-            <Link view="secondary" href={resumeUrl} download="Denys-Mogyliuk-CV.pdf">
-              Download CV ↓
+            <Link view="primary" href="#contact">
+              Get in touch
+            </Link>
+            <Link
+              view="secondary"
+              href={resumeUrl}
+              download="Denys-Mogyliuk-CV.pdf"
+            >
+              Résumé (PDF) ↓
             </Link>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }

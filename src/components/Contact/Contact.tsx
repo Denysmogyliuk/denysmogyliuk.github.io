@@ -25,7 +25,7 @@ function ContactColumn({ title, alignment, children }: ContactColumnProps) {
 
 export function Contact() {
   return (
-    <section className={styles.contact} id="contact" aria-labelledby="contact-heading">
+    <section className={styles.contact} id="contact" aria-labelledby="contact-heading" data-reveal>
       <p className={styles.lead} id="contact-heading">
         Open to interesting frontend challenges. Let’s talk.
       </p>

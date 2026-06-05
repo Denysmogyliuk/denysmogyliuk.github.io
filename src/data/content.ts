@@ -152,6 +152,7 @@ export const contacts: ContactLink[] = [
   { label: 'Email', value: 'denysmogyliuk@gmail.com', href: 'mailto:denysmogyliuk@gmail.com' },
   { label: 'Telegram', value: '@DenysMogyliuk', href: 'https://t.me/DenysMogyliuk' },
   { label: 'GitHub', value: 'DenysMogyliuk', href: 'https://github.com/DenysMogyliuk' },
+  { label: 'LinkedIn', value: 'denis-moghiliuc', href: 'https://www.linkedin.com/in/denis-moghiliuc' },
 ]
 
 export type Project = {

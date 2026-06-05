@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 — Page not found | Denys Mogyliuk</title>
+    <meta name="robots" content="noindex" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <style>
+      :root {
+        --bg: #fbfbfd;
+        --text: #1a1a24;
+        --muted: #5b5b6b;
+        --accent: #4f46e5;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #0e0e16;
+          --text: #ededf5;
+          --muted: #a0a0b4;
+          --accent: #a5a5ff;
+        }
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+      }
+      body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 18px;
+        padding: 24px;
+        text-align: center;
+        background: var(--bg);
+        color: var(--text);
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+          Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      img {
+        width: 56px;
+        height: 56px;
+        border-radius: 12px;
+      }
+      h1 {
+        font-size: clamp(3rem, 14vw, 6rem);
+        line-height: 1;
+        letter-spacing: -0.03em;
+      }
+      p {
+        color: var(--muted);
+        font-size: 1.05rem;
+        max-width: 36ch;
+      }
+      a {
+        margin-top: 8px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 22px;
+        border-radius: 999px;
+        background: var(--accent);
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="/logo.webp" alt="Denys Mogyliuk" width="56" height="56" />
+    <h1>404</h1>
+    <p>This page doesn’t exist — but the portfolio does.</p>
+    <a href="/">← Back to home</a>
+  </body>
+</html>
