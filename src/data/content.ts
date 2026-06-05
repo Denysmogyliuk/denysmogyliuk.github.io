@@ -274,7 +274,6 @@ export type Credit = { text: string; href?: string }
 
 export const credits: Credit[] = [
   { text: 'Handcrafted by me' },
-  { text: 'Source on GitHub', href: 'https://github.com/DenysMogyliuk' },
   { text: `© ${new Date().getFullYear()}, Denys Mogyliuk` },
 ]
 

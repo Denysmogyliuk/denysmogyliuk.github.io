@@ -7,8 +7,8 @@ export function Projects() {
   return (
     <Section id="projects" title="Projects">
       <ul className={styles.grid}>
-        {projects.map((project) => (
-          <ProjectCard key={project.url} project={project} />
+        {projects.map((project, index) => (
+          <ProjectCard key={project.url} project={project} index={index} />
         ))}
       </ul>
     </Section>

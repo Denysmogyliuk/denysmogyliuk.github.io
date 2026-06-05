@@ -1,3 +1,4 @@
+import type { CSSProperties } from 'react'
 import type { Project } from '../../data/content'
 import { Link } from '../Link/Link'
 import styles from './ProjectCard.module.css'
@@ -8,11 +9,15 @@ function getHostname(url: string) {
 
 type ProjectCardProps = {
   project: Project
+  index?: number
 }
 
-export function ProjectCard({ project }: ProjectCardProps) {
+export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
+  // Light stagger so a row of cards cascades in rather than popping together.
+  const style = { animationDelay: `${(index % 3) * 90}ms` } as CSSProperties
+
   return (
-    <li className={styles.card}>
+    <li className={styles.card} data-reveal style={style}>
       <a
         className={styles.preview}
         href={project.url}
