@@ -1,0 +1,102 @@
+/* details/summary reset */
+.mobileDetails {
+  display: none;
+}
+.mobileDetails > summary {
+  list-style: none;
+}
+.mobileDetails > summary::-webkit-details-marker {
+  display: none;
+}
+
+.menuButton {
+  display: none;
+  position: relative;
+  place-items: center;
+  width: 38px;
+  height: 34px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.menuButton:hover {
+  color: var(--accent-strong);
+  border-color: var(--accent-strong);
+}
+.menuButton svg {
+  display: block;
+}
+
+/* ---- icon animation ---- */
+.iconMenu,
+.iconClose {
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.iconClose {
+  position: absolute;
+  opacity: 0;
+  transform: rotate(-45deg) scale(0.7);
+  pointer-events: none;
+}
+
+.mobileDetails[open] .iconMenu {
+  opacity: 0;
+  transform: rotate(45deg) scale(0.7);
+}
+
+.mobileDetails[open] .iconClose {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+  pointer-events: auto;
+}
+
+/* ---- menu panel ---- */
+.mobileNav {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  display: grid;
+  gap: 2px;
+  padding: 6px clamp(20px, 5vw, 80px) 14px;
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
+  backdrop-filter: saturate(180%) blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.mobileDetails[open] .mobileNav {
+  animation: menuIn 0.22s ease both;
+}
+
+@keyframes menuIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.mobileNavLink {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  color: var(--text);
+  text-decoration: none;
+  padding: 11px 4px;
+  border-bottom: 1px solid var(--border);
+}
+.mobileNavLink:last-child {
+  border-bottom: none;
+}
+.mobileNavLink:hover {
+  color: var(--accent-strong);
+}
+
+@media (max-width: 720px) {
+  .mobileDetails {
+    display: block;
+  }
+  .menuButton {
+    display: grid;
+  }
+}

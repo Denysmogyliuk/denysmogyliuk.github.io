@@ -1,5 +1,6 @@
 import { profile } from '../../data/content'
 import { ThemeToggle } from '../ThemeToggle/ThemeToggle'
+import { MobileMenu } from '../MobileMenu/MobileMenu'
 import { useHeader } from '../../hooks/useHeader'
 import styles from './Header.module.css'
 
@@ -11,7 +12,7 @@ const navLinks = [
 ]
 
 export function Header() {
-  const { menuOpen, setMenuOpen, headerRef, scrollToTop } = useHeader()
+  const { headerRef, scrollToTop } = useHeader()
 
   return (
     <header ref={headerRef} className={styles.header} id="top">
@@ -35,42 +36,8 @@ export function Header() {
 
       <div className={styles.actions}>
         <ThemeToggle />
-        <button
-          type="button"
-          className={styles.menuButton}
-          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-          aria-expanded={menuOpen}
-          aria-controls="mobile-nav"
-          onClick={() => setMenuOpen((open) => !open)}
-        >
-          {menuOpen ? (
-            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-              <path d="M6 6l12 12M18 6L6 18" />
-            </svg>
-          ) : (
-            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-              <path d="M3 6h18M3 12h18M3 18h18" />
-            </svg>
-          )}
-        </button>
+        <MobileMenu links={navLinks} />
       </div>
-
-      <nav
-        id="mobile-nav"
-        className={`${styles.mobileNav} ${menuOpen ? styles.open : ''}`}
-        aria-label="Mobile"
-      >
-        {navLinks.map((link) => (
-          <a
-            key={link.href}
-            className={styles.mobileNavLink}
-            href={link.href}
-            onClick={() => setMenuOpen(false)}
-          >
-            {link.label}
-          </a>
-        ))}
-      </nav>
     </header>
   )
 }
