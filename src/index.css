@@ -103,6 +103,7 @@ html {
 }
 
 body {
+  padding-top: calc(62px + env(safe-area-inset-top, 0px));
   font-family: var(--font);
   background-color: var(--bg);
   color: var(--text);
