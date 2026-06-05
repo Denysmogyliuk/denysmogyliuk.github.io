@@ -10,6 +10,7 @@ type LinkProps = {
   download?: string | boolean;
   emphasis?: boolean;
   className?: string;
+  tabIndex?: number;
 };
 
 export function Link({
@@ -19,6 +20,7 @@ export function Link({
   download,
   emphasis,
   className,
+  tabIndex,
 }: LinkProps) {
   const external = /^https?:/.test(href);
   const classes = [
@@ -34,6 +36,7 @@ export function Link({
     <a
       className={classes}
       href={href}
+      {...(tabIndex != null ? { tabIndex } : {})}
       {...(download != null ? { download } : {})}
       {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
     >

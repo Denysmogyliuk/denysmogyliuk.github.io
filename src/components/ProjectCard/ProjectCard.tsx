@@ -39,7 +39,7 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
       <div className={styles.body}>
         <div className={styles.heading}>
           <h3 className={styles.name}>{project.name}</h3>
-          <Link className={styles.domain} href={project.url}>
+          <Link className={styles.domain} href={project.url} tabIndex={-1}>
             {getHostname(project.url)}
           </Link>
         </div>
