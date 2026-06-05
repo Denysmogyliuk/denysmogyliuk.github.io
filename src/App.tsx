@@ -13,6 +13,11 @@ export default function App() {
     const elements = document.querySelectorAll('[data-reveal]')
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
+    const revealHashTarget = () => {
+      const id = window.location.hash.slice(1)
+      if (id) document.getElementById(id)?.classList.add('is-visible')
+    }
+
     if (prefersReducedMotion || !('IntersectionObserver' in window)) {
       elements.forEach((el) => el.classList.add('is-visible'))
       return
@@ -27,11 +32,25 @@ export default function App() {
           }
         })
       },
-      { threshold: 0.1, rootMargin: '0px 0px -8% 0px' },
+      { threshold: 0, rootMargin: '0px 0px -10% 0px' },
     )
-
     elements.forEach((el) => observer.observe(el))
-    return () => observer.disconnect()
+
+    // Reveal anchor targets immediately so navigation never lands on hidden content.
+    revealHashTarget()
+    window.addEventListener('hashchange', revealHashTarget)
+
+    // SPA deep-link: the target element only exists after React mounts, so the
+    // browser's initial hash scroll is a no-op — perform it ourselves.
+    if (window.location.hash) {
+      const target = document.getElementById(window.location.hash.slice(1))
+      if (target) requestAnimationFrame(() => target.scrollIntoView({ behavior: 'auto' }))
+    }
+
+    return () => {
+      observer.disconnect()
+      window.removeEventListener('hashchange', revealHashTarget)
+    }
   }, [])
 
   return (
