@@ -1,11 +1,4 @@
-/* details/summary reset */
-.mobileDetails {
-  display: none;
-}
-.mobileDetails > summary {
-  list-style: none;
-}
-.mobileDetails > summary::-webkit-details-marker {
+.root {
   display: none;
 }
 
@@ -43,12 +36,12 @@
   pointer-events: none;
 }
 
-.mobileDetails[open] .iconMenu {
+.isOpen .iconMenu {
   opacity: 0;
   transform: rotate(45deg) scale(0.7);
 }
 
-.mobileDetails[open] .iconClose {
+.isOpen .iconClose {
   opacity: 1;
   transform: rotate(0deg) scale(1);
   pointer-events: auto;
@@ -66,9 +59,6 @@
   background: color-mix(in srgb, var(--bg) 92%, transparent);
   backdrop-filter: saturate(180%) blur(12px);
   border-bottom: 1px solid var(--border);
-}
-
-.mobileDetails[open] .mobileNav {
   animation: menuIn 0.22s ease both;
 }
 
@@ -93,7 +83,7 @@
 }
 
 @media (max-width: 720px) {
-  .mobileDetails {
+  .root {
     display: block;
   }
   .menuButton {
