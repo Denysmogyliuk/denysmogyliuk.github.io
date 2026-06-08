@@ -133,6 +133,7 @@ export const skills: SkillGroup[] = [
   { title: 'Real-time Systems', items: ['WebSocket', 'WebRTC'] },
   { title: 'Testing', items: ['Jest', 'React Testing Library', 'Playwright'] },
   { title: 'DevOps & Tooling', items: ['Docker', 'CI/CD', 'Vite', 'Webpack'] },
+  { title: 'AI Engineering', items: ['Cursor', 'Claude Code', 'Agent Skills & Rules', 'MCP', 'Team AI Workflows'] },
 ]
 
 export const languages = ['English — Upper-Intermediate (B2)']
