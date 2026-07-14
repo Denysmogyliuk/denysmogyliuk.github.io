@@ -50,7 +50,7 @@
   font-family: var(--font-mono);
   font-size: 0.85rem;
   color: var(--text-muted);
-  text-decoration: none;
+  text-decoration: underline;
   transition: color 0.15s ease;
 }
 .navLink:hover {

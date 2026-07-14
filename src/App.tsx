@@ -36,12 +36,9 @@ export default function App() {
     )
     elements.forEach((el) => observer.observe(el))
 
-    // Reveal anchor targets immediately so navigation never lands on hidden content.
     revealHashTarget()
     window.addEventListener('hashchange', revealHashTarget)
 
-    // SPA deep-link: the target element only exists after React mounts, so the
-    // browser's initial hash scroll is a no-op — perform it ourselves.
     if (window.location.hash) {
       const target = document.getElementById(window.location.hash.slice(1))
       if (target) requestAnimationFrame(() => target.scrollIntoView({ behavior: 'auto' }))

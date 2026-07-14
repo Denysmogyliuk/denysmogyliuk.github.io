@@ -40,9 +40,9 @@
 }
 
 .primary {
-  background: #fff;
-  color: var(--accent-strong);
-  border: 1px solid #fff;
+  background: var(--color-white);
+  color: var(--color-black);
+  border: 1px solid var(--color-white);
   transition: transform 0.15s ease, opacity 0.15s ease;
 }
 .primary:hover {
@@ -51,13 +51,13 @@
 
 .secondary {
   background: transparent;
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.55);
+  color: var(--color-white);
+  border: 1px solid color-mix(in srgb, var(--color-white) 55%, transparent);
   transition: background-color 0.15s ease, border-color 0.15s ease;
 }
 .secondary:hover {
-  background: rgba(255, 255, 255, 0.14);
-  border-color: #fff;
+  background: color-mix(in srgb, var(--color-white) 14%, transparent);
+  border-color: var(--color-white);
 }
 
 @media (prefers-reduced-motion: reduce) {

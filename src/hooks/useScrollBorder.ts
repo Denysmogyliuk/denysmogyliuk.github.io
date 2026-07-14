@@ -1,10 +1,5 @@
 import { useEffect, useRef } from 'react'
 
-/**
- * Returns a ref to attach to an element.
- * Sets --border-opacity CSS variable (0→1) based on scroll progress
- * from 0 to `maxScroll` pixels.
- */
 export function useScrollBorder<T extends HTMLElement>(maxScroll = 100) {
   const ref = useRef<T>(null)
 

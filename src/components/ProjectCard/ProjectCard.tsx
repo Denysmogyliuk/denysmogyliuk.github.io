@@ -13,7 +13,6 @@ type ProjectCardProps = {
 }
 
 export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
-  // Light stagger so a row of cards cascades in rather than popping together.
   const style = { animationDelay: `${(index % 3) * 90}ms` } as CSSProperties
 
   return (

@@ -41,7 +41,7 @@
   padding: var(--pad);
   padding-bottom: 0;
   border-radius: 0;
-  background: #273238;
+  background: var(--hero-card-bg);
   overflow: hidden;
   border-radius: 0.25rem;
 }
@@ -70,7 +70,7 @@
 }
 
 .cardBody {
-  color: #fff;
+  color: var(--color-white);
   padding-bottom: var(--pad);
 }
 
@@ -90,7 +90,7 @@
 .intro {
   font-size: clamp(0.92rem, 1.3vw, 1rem);
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.85);
+  color: color-mix(in srgb, var(--color-white) 85%, transparent);
   max-width: 60ch;
   margin-bottom: 24px;
 }
