@@ -1,18 +1,18 @@
-import type { ReactNode } from 'react'
-import { contacts, credits, resumeUrl } from '../../data/content'
-import { Link } from '../Link/Link'
-import styles from './Contact.module.css'
+import type { ReactNode } from "react";
+import { contacts, credits, resumeUrl } from "../../data/content";
+import { Link } from "../Link/Link";
+import styles from "./Contact.module.css";
 
-const email = contacts.find((contact) => contact.label === 'Email')
-const otherContacts = contacts.filter((contact) => contact.label !== 'Email')
+const email = contacts.find((contact) => contact.label === "Email");
+const otherContacts = contacts.filter((contact) => contact.label !== "Email");
 
-type ColumnAlignment = 'left' | 'center' | 'right'
+type ColumnAlignment = "left" | "center" | "right";
 
 type ContactColumnProps = {
-  title: string
-  alignment: ColumnAlignment
-  children: ReactNode
-}
+  title: string;
+  alignment: ColumnAlignment;
+  children: ReactNode;
+};
 
 function ContactColumn({ title, alignment, children }: ContactColumnProps) {
   return (
@@ -20,12 +20,17 @@ function ContactColumn({ title, alignment, children }: ContactColumnProps) {
       <h2 className={styles.columnTitle}>{title}</h2>
       <ul className={styles.list}>{children}</ul>
     </div>
-  )
+  );
 }
 
 export function Contact() {
   return (
-    <section className={styles.contact} id="contact" aria-labelledby="contact-heading" data-reveal>
+    <section
+      className={styles.contact}
+      id="contact"
+      aria-labelledby="contact-heading"
+      data-reveal
+    >
       <p className={styles.lead} id="contact-heading">
         Open to interesting frontend challenges. Let’s talk.
       </p>
@@ -33,7 +38,7 @@ export function Contact() {
       <div className={styles.columns}>
         <ContactColumn title="Links" alignment="left">
           <li>
-            <Link href={resumeUrl} download="Denys-Mogyliuk-CV.pdf" emphasis>
+            <Link href={resumeUrl} download="Denys-Mogyliuk-CV.pdf">
               Résumé (PDF) ↓
             </Link>
           </li>
@@ -65,5 +70,5 @@ export function Contact() {
         </ContactColumn>
       </div>
     </section>
-  )
+  );
 }

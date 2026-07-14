@@ -40,10 +40,10 @@
   align-items: end;
   padding: var(--pad);
   padding-bottom: 0;
-  border-radius: 28px;
-  background: hsl(263 52% 64%);
-  box-shadow: var(--shadow);
+  border-radius: 0;
+  background: #273238;
   overflow: hidden;
+  border-radius: 0.25rem;
 }
 
 @media (max-width: 720px) {
